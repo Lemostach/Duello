@@ -15,14 +15,14 @@ a.addEventListener('click', () => {
         h3.innerText = 'Regístrate'
         btn.innerText = 'Crear cuenta'
         p.innerText = '¿Ya tienes cuenta?' 
-        a.innerText = 'Regístrate'
+        a.innerText = 'Inicia sesión'
     } 
     
     if(modoRegistro === false){
         h3.innerText = 'Inicia sesión'
         btn.innerText = 'Iniciar sesión'
-        p.innerText = '¿Ya tienes cuenta?'
-        a.innerText = 'Inicia sesión'
+        p.innerText = '¿No tienes cuenta?'
+        a.innerText = 'Regístrate'
     
     }
     
