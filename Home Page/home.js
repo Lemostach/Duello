@@ -1,7 +1,6 @@
-const main = document.querySelector('main')
-const workspace = document.getElementsByClassName('workspace')
-const input = document.createElement('input')
 
-workspace.addEventListener('click', function(){
-    console.log('first')
-})
+=======
+usuario;
+const user = document.querySelector(".user")
+user.innerHTML.valueOf(usuario)
+>>>>>>> b468c4dc0a9cbdc5e8b86ae2bfa6ab1db2c872cd
