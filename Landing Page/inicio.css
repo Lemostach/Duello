@@ -5,14 +5,27 @@
 
 html, body{
     height: 100%;
+    background-color: #354F52;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
-    height: 100%;
+    height: 80%;
+    width: 600px;
+    border: 2px solid gray;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+hr{
+    width: 250px;
 }
 
 h1{
@@ -24,11 +37,16 @@ h2{
 }
 
 h3{
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 input{
+    border-radius: 5px;
+    font-size: 14px;
+    height: 25px;
     margin-bottom: 20px;
+    outline: none;
 }
 
 form{
@@ -38,4 +56,17 @@ form{
 
 button{
     margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 30px;
+    cursor: pointer;
+    background-color: #CAD2C5;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover{
+    background-color: #52796F;
+    color: white;
 }
