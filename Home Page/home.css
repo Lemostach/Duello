@@ -19,6 +19,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+
+
 header{
     display: flex;
     background-color: rgba(0, 0, 0, 0.821);
@@ -57,9 +59,11 @@ ul{
     list-style: none;
 }
 
-.btn:hover{
-    transition: background 1s;
-    background-color: rgba(255, 255, 255, 0.229);
+main{
+    padding-top: 5rem;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .contenedor{
@@ -123,4 +127,53 @@ ul{
 .button1, .button2, .button3, .button4{
    margin: 20px;
 }
+=======
+main input{
+    margin-right: 15px;
+}
+.visor-tarea{
+    border: solid brown;
+    background-color: gray;
+    margin-top: 100px;
+    margin-left: 1100px;
+    padding-bottom: 20px;
+    color: brown;
+    font-size: 33px;
+}
+.descripcion-tarea{
+  
+    color: white;
+ 
+  
+}
+.buttonArch{
+
+        top:80%;
+        right:8%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background: rgb(127, 125, 121); 
+        }
+.buttonEdit{
+    top:80%;
+    right:8%;
+    width:100px;
+    height:40px;
+    position: absolute;
+    z-index: 2;
+    background: rgb(127, 125, 121); 
+    }
+
+.buttonElim{
+    top:80%;
+        right:8%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background: rgb(127, 125, 121); 
+        }
+
 
