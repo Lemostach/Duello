@@ -69,3 +69,48 @@ main{
 main input{
     margin-right: 15px;
 }
+.visor-tarea{
+    border: solid brown;
+    background-color: gray;
+    margin-top: 100px;
+    margin-left: 1100px;
+    padding-bottom: 20px;
+    color: brown;
+    font-size: 33px;
+}
+.descripcion-tarea{
+  
+    color: white;
+ 
+  
+}
+.buttonArch{
+
+        top:80%;
+        right:8%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background: rgb(127, 125, 121); 
+        }
+.buttonEdit{
+    top:80%;
+    right:8%;
+    width:100px;
+    height:40px;
+    position: absolute;
+    z-index: 2;
+    background: rgb(127, 125, 121); 
+    }
+
+.buttonElim{
+    top:80%;
+        right:8%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background: rgb(127, 125, 121); 
+        }
+
