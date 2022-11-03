@@ -83,13 +83,15 @@ main{
     justify-content: center;
 }
 
-
+.mid{
+    display: grid;
+}
 
 .forms{
     display: grid;
     grid-template-areas:
-    "form1 form2"
-    "form3 form4";
+    "form1 form2 h"
+    "form3 form4 h";
     margin-top: 20px;
     text-align: center;
     
@@ -102,16 +104,16 @@ main{
     }
 
 .form1{
-    grid-area: "form1";
+    grid-area: form1;
 }
 .form2{
-    grid-area: "form2";
+    grid-area: form2;
 }
 .form3{
-    grid-area: "form3";
+    grid-area: form3;
 }
 .form4{
-    grid-area: "form4";
+    grid-area: form4;
 }
 .form1, .form2, .form3, .form4{
     display: grid;
@@ -127,18 +129,24 @@ main{
 .button1, .button2, .button3, .button4{
    margin: 20px;
 }
-=======
+
+
+
+
 main input{
     margin-right: 15px;
 }
 .visor-tarea{
+    display: block;
     border: solid brown;
     background-color: gray;
-    margin-top: 100px;
-    margin-left: 1100px;
+    justify-content: end;
+    right: 10px;    
     padding-bottom: 20px;
     color: brown;
     font-size: 33px;
+    height: 700px;
+    width: 400px;
 }
 .descripcion-tarea{
   
@@ -176,4 +184,6 @@ main input{
         background: rgb(127, 125, 121); 
         }
 
-
+.lateral{
+    grid-area: h;
+}
