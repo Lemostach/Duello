@@ -28,11 +28,13 @@ header{
     width: 100%;
     position: fixed;
     top: 0px;
+    height: 70px;
     
 }
     header input{
         margin: 20px;
         width: 300px;
+        border-radius: 3px;
     }
 
     
@@ -48,8 +50,29 @@ header{
         text-decoration: none;
         color: white;
         padding: 5px;
+        border-radius: 3px;
         background-color: black;
     }
 ul{
     list-style: none;
+}
+
+.btn:hover{
+    transition: background 1s;
+    background-color: rgba(255, 255, 255, 0.229);
+}
+
+.contenedor{
+    margin-top: 80px;
+    justify-content: start;
+    border: 1px solid black;
+    position: fixed;
+}
+.logo{
+    height: 100px;
+    width: auto;
+}
+.user{
+    display: flex;
+    justify-content: center;
 }
