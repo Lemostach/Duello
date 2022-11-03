@@ -19,6 +19,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+
+
 header{
     display: flex;
     background-color: rgba(0, 0, 0, 0.821);
@@ -57,22 +59,13 @@ ul{
     list-style: none;
 }
 
-.btn:hover{
-    transition: background 1s;
-    background-color: rgba(255, 255, 255, 0.229);
-}
-
-.contenedor{
-    margin-top: 80px;
-    justify-content: start;
-    border: 1px solid black;
-    position: fixed;
-}
-.logo{
-    height: 100px;
-    width: auto;
-}
-.user{
+main{
+    padding-top: 5rem;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+}
+
+main input{
+    margin-right: 15px;
 }
