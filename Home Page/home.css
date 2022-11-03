@@ -19,6 +19,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+
+
 header{
     display: flex;
     background-color: rgba(0, 0, 0, 0.821);
@@ -28,11 +30,13 @@ header{
     width: 100%;
     position: fixed;
     top: 0px;
+    height: 70px;
     
 }
     header input{
         margin: 20px;
         width: 300px;
+        border-radius: 3px;
     }
 
     
@@ -48,10 +52,22 @@ header{
         text-decoration: none;
         color: white;
         padding: 5px;
+        border-radius: 3px;
         background-color: black;
     }
 ul{
     list-style: none;
+}
+
+main{
+    padding-top: 5rem;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main input{
+    margin-right: 15px;
 }
 .visor-tarea{
     border: solid brown;
@@ -97,3 +113,4 @@ ul{
         z-index: 2;
         background: rgb(127, 125, 121); 
         }
+
