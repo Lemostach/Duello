@@ -63,11 +63,13 @@ ul{
 }
 
 .contenedor{
-    margin-top: 80px;
-    justify-content: start;
+    margin-top: 70px;
     border: 1px solid black;
-    position: fixed;
+    height: 140px;
+    width: 120px;
+
 }
+
 .logo{
     height: 100px;
     width: auto;
@@ -76,3 +78,49 @@ ul{
     display: flex;
     justify-content: center;
 }
+
+
+
+.forms{
+    display: grid;
+    grid-template-areas:
+    "form1 form2"
+    "form3 form4";
+    margin-top: 20px;
+    text-align: center;
+    
+}
+    .forms input[type="text"]{
+        margin-top: 20px;
+        width: 342px;
+        height: 20px;
+        border-radius: 3px;
+    }
+
+.form1{
+    grid-area: "form1";
+}
+.form2{
+    grid-area: "form2";
+}
+.form3{
+    grid-area: "form3";
+}
+.form4{
+    grid-area: "form4";
+}
+.form1, .form2, .form3, .form4{
+    display: grid;
+
+    border: 2px solid black;
+    
+    margin: 20px;
+    
+    width: 350px;
+    height: 250px;
+}
+
+.button1, .button2, .button3, .button4{
+   margin: 20px;
+}
+
