@@ -58,3 +58,14 @@ header{
 ul{
     list-style: none;
 }
+
+main{
+    padding-top: 5rem;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main input{
+    margin-right: 15px;
+}
