@@ -94,9 +94,11 @@ main{
     "form3 form4 h";
     margin-top: 20px;
     text-align: center;
+    right: 0px;
     
 }
     .forms input[type="text"]{
+        display: block;
         margin-top: 20px;
         width: 342px;
         height: 20px;
@@ -123,7 +125,7 @@ main{
     margin: 20px;
     
     width: 350px;
-    height: 250px;
+    height: 300px;
 }
 
 .button1, .button2, .button3, .button4{
@@ -147,6 +149,8 @@ main input{
     font-size: 33px;
     height: 700px;
     width: 400px;
+    grid-area: h;
+    
 }
 .descripcion-tarea{
   
@@ -184,6 +188,6 @@ main input{
         background: rgb(127, 125, 121); 
         }
 
-.lateral{
-    grid-area: h;
+textarea{
+    resize: none;
 }
