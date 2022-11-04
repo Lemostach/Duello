@@ -67,12 +67,16 @@ main{
 }
 
 .contenedor{
+    display: flex;
     margin-top: 70px;
     border: 1px solid black;
     height: 140px;
     width: 120px;
+    
 
 }
+
+
 
 .logo{
     height: 100px;
@@ -133,11 +137,16 @@ main{
 }
 
 
-
+.add{
+    display: flex;
+    justify-content: center;
+}
 
 main input{
-    margin-right: 15px;
+    display: flex;
+    margin-right: 4px;
 }
+
 .visor-tarea{
     display: block;
     border: solid brown;
