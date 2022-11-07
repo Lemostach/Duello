@@ -4,6 +4,13 @@ const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
 
+
+const asignarBtn = document.querySelector('.asignarButton');
+
+const addName = document.querySelector(".newTask")
+const addButton = document.querySelector(".addButton")
+
+
 const arrayDivs = [];
 const listasDb = localStorage.getItem('listas')
 
@@ -34,13 +41,11 @@ if(listasDb){
 
 
 
+
 const listas = [
     {nombre: '', 
     tareas: ''}
 ]
-
-
-
 
 
 btn.onclick = (e) => {
@@ -68,7 +73,6 @@ btn.onclick = (e) => {
         btn.disabled = true;
     }
     
- 
     
     forms.addEventListener('click', (e) => {
         if(!e.target.classList.contains("addTask")) return
@@ -77,9 +81,6 @@ btn.onclick = (e) => {
         visor.style.display = 'flex'
         })
 
-
-
-   
 }
 
 
@@ -92,3 +93,30 @@ const tipo = userLog[0].rol
 
 
 user.append(`Hola, buenas ${tipo}`)
+
+
+if(tipo === "trabajador") {
+    asignarBtn.style.display= "none";
+    btn.style.display= "none";
+    input.style.display= "none";
+} else {
+    asignarBtn.style.display= "inline";
+    btn.style.display= "inline";
+    input.style.display= "inline";
+    }
+
+
+
+
+
+//cambiar nombre tarea desde el visualizador
+// function changeTaskName(){
+//     const list = document.createElement("div")
+//     form.appendChild(list)
+//     list.className = 'list'
+//     list.innerHTML = `<div class="changeTaskName">${addName.value}</div>`
+//     addName.value = ''
+// }
+
+// addButton.addEventListener("click", changeTaskName())
+
