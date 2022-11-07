@@ -38,18 +38,22 @@ btn.onclick = (e) => {
     if(arrayDivs.length >= 4){
         btn.disabled = true;
     }
-    console.log(arrayDivs)
-
-    const addTask = document.querySelectorAll('.addTask')
-
-    addTask.forEach(element => {
-        element.addEventListener('click', () => {
+    
+    const addTask = document.querySelector('.addTask')
+    
+    
+    addTask.addEventListener('click', () => {
 
             visor.style.display = 'flex'
         })
-    });
+    ;
 
+
+   
 }
+
+
+
 
 
 
