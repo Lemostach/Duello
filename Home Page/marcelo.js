@@ -1,3 +1,4 @@
+
 const btn = document.querySelector('.addList')
 const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
@@ -42,7 +43,3 @@ addTask.addEventListener('click', () => {
     visor.style.display = 'flex'
 })
 }
-
-
-
-
