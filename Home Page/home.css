@@ -49,6 +49,7 @@ header{
         margin-right: 20px;
     }
     .btn{
+        text-decoration: none;
         color: white;
         padding: 5px;
         border-radius: 3px;
@@ -73,7 +74,7 @@ main{
 .contenedor{
     display: flex;
     margin-top: 70px;
-    border: 1px solid black;
+    padding-left: 20px;
     height: 140px;
     width: 120px;
     
@@ -143,7 +144,7 @@ main input{
     align-items: center;
     right: 10px;    
     padding-bottom: 20px;
-    color: brown;
+    color: rgb(255, 0, 0);
     font-size: 33px;
     height: 700px;
     width: 35%;
@@ -211,4 +212,7 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.user{
+    text-align: center;
 }
