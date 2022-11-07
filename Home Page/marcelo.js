@@ -54,8 +54,12 @@ btn.onclick = (e) => {
 }
 
 
+//sacar si es trabajador o admin
+
+const userLog = JSON.parse(localStorage.getItem("usuarioLogeado"))
+const user = document.querySelector(".user")
+
+const tipo = userLog[0].rol
 
 
-
-
-
+user.append(`Hola, buenas ${tipo}`)
