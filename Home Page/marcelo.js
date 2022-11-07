@@ -3,7 +3,36 @@ const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
+
 const arrayDivs = [];
+const listasDb = localStorage.getItem('listas')
+
+if(listasDb){
+    const listObj = JSON.parse(listasDb)
+    listObj.forEach(lista => {
+    const list = document.createElement("div")
+    forms.appendChild(list)
+    list.className = 'list'
+    list.innerHTML = `<p>${lista.nombre}</p> <div class='addTask'>Añadir tarea</div>`
+
+    arrayDivs.push(list);
+    if(listObj >= 4){
+        btn.disabled = true;
+    }
+    });
+
+    forms.addEventListener('click', (e) => {
+        if(!e.target.classList.contains("addTask")) return
+
+        
+        visor.style.display = 'flex'
+        })
+    
+}
+
+
+
+
 
 const listas = [
     {nombre: '', 
@@ -35,7 +64,7 @@ btn.onclick = (e) => {
     input.value = ''
 
     arrayDivs.push(list);
-    if(arrayDivs.length >= 4){
+    if(listObj >= 4){
         btn.disabled = true;
     }
     

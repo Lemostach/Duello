@@ -139,6 +139,7 @@ main input{
     outline: none;
     border-radius: 5px;
     background-color: #CAD2C5;
+    border: 2px solid #2F3E46;
 }
 
 .visor-tarea{
@@ -164,11 +165,21 @@ main input{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.descripcion-tarea{
-    margin-left: 15px;
-    
-  
+
+.descripcion{
+    border: 2px solid #2F3E46;
+    border-radius: 5px;
+    background-color: whitesmoke
 }
+
+
+.newTask{
+    border: 2px solid #2F3E46;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    outline: none
+}
+
 
 .addButton{
     cursor: pointer;
@@ -233,7 +244,7 @@ textarea{
 .list{
     width: 300px;
     height: 250px;
-    border: 1px solid black;
+    border: 2px solid #2F3E46;
     margin-left: 40px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -275,6 +286,8 @@ textarea{
 }
 .user{
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 .duello{
     display: flex;
