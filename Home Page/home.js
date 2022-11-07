@@ -10,15 +10,15 @@ const exitBtn = document.querySelector('#cerrar-sesion')
 exitBtn.onclick = function() {
 
     if(isLogged){
-        isLogged=!isLogged
-        localStorage.clear()
        
+        
+       
+        
+        localStorage.removeItem("usuarioLogeado");
         location.assign("../Landing Page/inicio.html");
         console.log("Hola")
 
     }
-
-
     
 }
 
@@ -30,6 +30,8 @@ exitBtn.onclick = function() {
 //     forms.appendChild(list)
     
 //     task.innerHTML = `<p>${input.value}</p> <div class='taskName'>${addName}</div>`
+
+
 
 
 

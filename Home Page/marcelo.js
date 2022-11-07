@@ -3,17 +3,19 @@ const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
+
+const asignarBtn = document.querySelector('.asignarButton');
+
 const addName = document.querySelector(".newTask")
 const addButton = document.querySelector(".addButton")
+
 const arrayDivs = [];
+
 
 const listas = [
     {nombre: '', 
     tareas: ''}
 ]
-
-
-
 
 
 btn.onclick = (e) => {
@@ -63,6 +65,20 @@ const tipo = userLog[0].rol
 user.append(`Hola, buenas ${tipo}`)
 
 
+if(tipo === "trabajador") {
+    asignarBtn.style.display= "none";
+    btn.style.display= "none";
+    input.style.display= "none";
+} else {
+    asignarBtn.style.display= "inline";
+    btn.style.display= "inline";
+    input.style.display= "inline";
+    }
+
+
+
+
+
 //cambiar nombre tarea desde el visualizador
 // function changeTaskName(){
 //     const list = document.createElement("div")
@@ -73,3 +89,4 @@ user.append(`Hola, buenas ${tipo}`)
 // }
 
 // addButton.addEventListener("click", changeTaskName())
+
