@@ -48,13 +48,17 @@ header{
         margin: 10px;
         margin-right: 20px;
     }
-    header nav ul li a{
-        text-decoration: none;
+    .btn{
         color: white;
         padding: 5px;
         border-radius: 3px;
         background-color: black;
     }
+    .btn:hover{
+        transition: background 1s;
+        background-color: rgba(255, 255, 255, 0.519);
+    }
+    
 ul{
     list-style: none;
 }
