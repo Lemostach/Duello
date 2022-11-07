@@ -39,14 +39,15 @@ btn.onclick = (e) => {
         btn.disabled = true;
     }
     
-    const addTask = document.querySelector('.addTask')
+ 
     
-    
-    addTask.addEventListener('click', () => {
+    forms.addEventListener('click', (e) => {
+        if(!e.target.classList.contains("addTask")) return
 
-            visor.style.display = 'flex'
+        
+        visor.style.display = 'flex'
         })
-    ;
+
 
 
    
