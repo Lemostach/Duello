@@ -17,10 +17,10 @@ exitBtn.onclick = function() {
         console.log("Hola")
 
     }
-
-
     
 }
+
+
 
 
 

@@ -199,7 +199,7 @@ main input{
     .archButton:hover{
         background-color: #52796F;
     }
-.editButton{
+.asignarButton{
     cursor: pointer;
     cursor: pointer;
     font-family: 'Ubuntu';
@@ -210,7 +210,7 @@ main input{
     transition: all 300ms ease-in-out;
     }
 
-    .editButton:hover{
+    .asignarButton:hover{
         background-color: #52796F;
     }
 

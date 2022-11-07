@@ -3,15 +3,16 @@ const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
+
+const asignarBtn = document.querySelector('.asignarButton');
+
 const arrayDivs = [];
+
 
 const listas = [
     {nombre: '', 
     tareas: ''}
 ]
-
-
-
 
 
 btn.onclick = (e) => {
@@ -48,9 +49,6 @@ btn.onclick = (e) => {
         visor.style.display = 'flex'
         })
 
-
-
-   
 }
 
 
@@ -63,3 +61,16 @@ const tipo = userLog[0].rol
 
 
 user.append(`Hola, buenas ${tipo}`)
+
+if(tipo === "trabajador") {
+    asignarBtn.style.display= "none";
+    btn.style.display= "none";
+    input.style.display= "none";
+} else {
+    asignarBtn.style.display= "inline";
+    btn.style.display= "inline";
+    input.style.display= "inline";
+    }
+
+
+
