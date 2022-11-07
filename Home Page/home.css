@@ -76,7 +76,7 @@ main{
 .contenedor{
     display: flex;
     margin-top: 70px;
-    border: 1px solid black;
+    padding-left: 20px;
     height: 140px;
     width: 120px;
     
@@ -148,6 +148,7 @@ main input{
     background-color: darkgrey; 
     padding-bottom: 20px;
     color: white;
+
     font-size: 33px;
     height: 65%;
     width: 35%;
@@ -227,4 +228,7 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.user{
+    text-align: center;
 }
