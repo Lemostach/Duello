@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <title>Duello</title>
 </head>
@@ -45,14 +47,18 @@
 
         </section>
         <div class="visor-tarea" id="wrapper">
-            <legend>Visor de Tarea</legend>
+            <input type="text" placeholder="Nombre de la tarea" class="newTask">
             <div type="textarea" class="descripcion-tarea">
                 
-                <textarea rows="35" cols="35" class="descripcion" placeholder="Usted hara esto"></textarea>
-                <input type="buttonArch" class="Archbutton" id="archivar" value="Archivar Tarea" />
-            <input type="buttonEdit" class="Editbutton" id="editar" value="Editar Tarea" />
-            <input type="buttonElim" class="Elimbutton" id="Eliminar" value="Eliminar Tarea" />
+                <textarea rows="15" cols="35" class="descripcion" placeholder="Usted hara esto"></textarea>
             </div>
+            <div>
+                <input type="submit" class="addButton" value="Añadir tarea">
+                <input type="submit" class="archButton" id="archivar" value="Archivar Tarea" />
+            <input type="submit" class="editButton" id="editar" value="Editar Tarea" />
+            <input type="submit" class="elimButton" id="Eliminar" value="Eliminar Tarea" />
+            
+        </div>
         </section>
     </section>
     <script src="marcelo.js"></script>
