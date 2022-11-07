@@ -6,6 +6,9 @@ const visor = document.querySelector('.visor-tarea')
 
 const asignarBtn = document.querySelector('.asignarButton');
 
+const addName = document.querySelector(".newTask")
+const addButton = document.querySelector(".addButton")
+
 const arrayDivs = [];
 
 
@@ -40,7 +43,6 @@ btn.onclick = (e) => {
         btn.disabled = true;
     }
     
- 
     
     forms.addEventListener('click', (e) => {
         if(!e.target.classList.contains("addTask")) return
@@ -62,6 +64,7 @@ const tipo = userLog[0].rol
 
 user.append(`Hola, buenas ${tipo}`)
 
+
 if(tipo === "trabajador") {
     asignarBtn.style.display= "none";
     btn.style.display= "none";
@@ -73,4 +76,17 @@ if(tipo === "trabajador") {
     }
 
 
+
+
+
+//cambiar nombre tarea desde el visualizador
+// function changeTaskName(){
+//     const list = document.createElement("div")
+//     form.appendChild(list)
+//     list.className = 'list'
+//     list.innerHTML = `<div class="changeTaskName">${addName.value}</div>`
+//     addName.value = ''
+// }
+
+// addButton.addEventListener("click", changeTaskName())
 

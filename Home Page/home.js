@@ -23,6 +23,13 @@ exitBtn.onclick = function() {
 }
 
 
+// const addName = document.querySelector(".newTask")
+
+
+// const task = document.createElement("div")
+//     forms.appendChild(list)
+    
+//     task.innerHTML = `<p>${input.value}</p> <div class='taskName'>${addName}</div>`
 
 
 
