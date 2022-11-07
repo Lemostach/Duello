@@ -29,11 +29,11 @@ localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 
 if (isLogged) {
-    document.getElementById("formLogin").style.display = "none";
-
-    document.getElementById("deslogear").style.display = "inline";
+   location.assign("../Home%20Page/home.html");
+     
 
 }
+
 
 document.getElementById("deslogear").onclick = function() {
     localStorage.setItem("usuarioLogeado", "");
@@ -63,8 +63,11 @@ document.getElementById("deslogear").onclick = function() {
             
 
                  const usuarioLogeado = localStorage.setItem("usuarioLogeado", JSON.stringify(currentUser));
-            } else {
+            
+            }else {
                 console.log("NO HAY USER")
             }
+
+    
             
         }
