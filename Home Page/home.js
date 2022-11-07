@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-/* 
-const user = document.querySelector(".user")
-Nombre del usuario */
-const userLog = JSON.parse(localStorage.getItem("usuarioLogeado"))
-   
-email = userLog[0].email
+
 
 /* cerrar sesión */
 
@@ -27,17 +21,9 @@ exitBtn.onclick = function() {
 
     
 }
-=======
-// usuario;
-// const user = document.querySelector(".user")
-// user.innerHTML.valueOf(usuario)
 
-// document.getElementById("cerrar-sesion").onclick = function() {
-//     localStorage.setItem("usuarioLogeado", "");
-// }
->>>>>>> 28e59c9ddc1c53e0257d9cb517a1cc758ca37204
 
-   
+
 
 
 
