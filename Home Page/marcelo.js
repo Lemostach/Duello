@@ -1,7 +1,3 @@
-
-
-
-
 const btn = document.querySelector('.addList')
 const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
@@ -30,7 +26,7 @@ btn.onclick = (e) => {
         listas.push(nuevaLista)
         localStorage.setItem('listas', JSON.stringify(listas))
     }
-   
+    
     
     const list = document.createElement("div")
     forms.appendChild(list)
@@ -44,15 +40,16 @@ btn.onclick = (e) => {
     }
     console.log(arrayDivs)
 
-    const addTask = document.querySelector('.addTask')
+    const addTask = document.querySelectorAll('.addTask')
 
-addTask.addEventListener('click', () => {
+    addTask.forEach(element => {
+        element.addEventListener('click', () => {
 
-    visor.style.display = 'flex'
-})
+            visor.style.display = 'flex'
+        })
+    });
+
 }
-
-
 
 
 
