@@ -4,68 +4,34 @@ const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
 
-
 const asignarBtn = document.querySelector('.asignarButton');
 
 const addName = document.querySelector(".newTask")
 const addButton = document.querySelector(".addButton")
 
-const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
-const getUser = JSON.parse(localStorage.getItem('usuarios'))
-
- 
 const arrayDivs = [];
-const listasDb = localStorage.getItem('usuarios')
 
 
-
-if(listasDb){
-    getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
-            
-            if(user.listas.length >= 4){
-                btn.disabled = true;
-            }
-        
-            user.listas.forEach(lista => {
-            const list = document.createElement("div")
-            forms.appendChild(list)
-            list.className = 'list'
-            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p> <div class='addTask'>Añadir tarea</div>`
-        
-            
-        });
-        }
-    })
-   
-   
-
-    forms.addEventListener('click', (e) => {
-        if(!e.target.classList.contains("addTask")) return
-
-        
-        visor.style.display = 'flex'
-        })
-    
-}
+const listas = [
+    {nombre: '', 
+    tareas: ''}
+]
 
 
 btn.onclick = (e) => {
     e.preventDefault()
     
     let nuevaLista = {nombre: input.value, tareas: 'tarea'}
+    if(JSON.parse(localStorage.getItem('listas')) === null){
+        listas.shift()
+        listas.push(nuevaLista)
+    localStorage.setItem('listas', JSON.stringify(listas))
+    } else{
+        listas.push(nuevaLista)
+        localStorage.setItem('listas', JSON.stringify(listas))
+    }
     
-    getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
-            user.listas.push(nuevaLista)
-            console.log(user.listas)
-        }
-    })
-
-       
-        
-       localStorage.setItem('usuarios', JSON.stringify(getUser))
-       
+    
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
