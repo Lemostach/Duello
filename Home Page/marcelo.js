@@ -31,7 +31,7 @@ if(listasDb){
             const list = document.createElement("div")
             forms.appendChild(list)
             list.className = 'list'
-            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p> <div class='addTask'>Añadir tarea</div>`
+            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
         
             
         });
@@ -69,7 +69,7 @@ btn.onclick = (e) => {
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
-    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div>`
+    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
     input.value = ''
     
     arrayDivs.push(list);
