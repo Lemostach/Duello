@@ -22,21 +22,19 @@ const listasDb = localStorage.getItem('usuarios')
 if(listasDb){
     getUser.forEach(user => {
         if(usuarioLogeado.email === user.email){
-            if (user.listas) {
-                if(user.listas.length >= 4){
-                    btn.disabled = true;
-                }
             
-                user.listas.forEach(lista => {
-                const list = document.createElement("div")
-                forms.appendChild(list)
-                list.className = 'list'
-                list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> `
-            
-                
-            });
+            if(user.listas.length >= 4){
+                btn.disabled = true;
             }
+        
+            user.listas.forEach(lista => {
+            const list = document.createElement("div")
+            forms.appendChild(list)
+            list.className = 'list'
+            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
+        
             
+        });
         }
     })
    
@@ -71,7 +69,7 @@ btn.onclick = (e) => {
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
-    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> `
+    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
     input.value = ''
     
     arrayDivs.push(list);
@@ -96,20 +94,7 @@ localStorage.setItem('position', JSON.stringify(index))
     
     
 
-    
-    
-
 }
-
-
-
-
-    
-
-    
-   
-
-    
 
 
 //sacar si es trabajador o admin
