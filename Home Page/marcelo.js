@@ -12,18 +12,23 @@ const descripcion = document.querySelector('.descripcion')
 
 const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
 const getUser = JSON.parse(localStorage.getItem('usuarios'))
-
-
 const arrayDivs = [];
-const listasDb = localStorage.getItem('usuarios')
 
 
+const todosUsuarios = JSON.parse(localStorage.getItem('usuarios'))
 
-if (listasDb) {
-    getUser.forEach(user => {
-        if (usuarioLogeado.email === user.email) {
+
+const jefeTablero = (usuarioLogeado.rol === "admin") ? usuarioLogeado : usuarioLogeado.jefe
+
+
+if(todosUsuarios){
+
+    todosUsuarios.forEach(user => {
+
+        if(jefeTablero.email === user.email){
+
             if (user.listas) {
-                if (user.listas.length >= 4) {
+                if(user.listas.length >= 4){
                     btn.disabled = true;
                 }
               
@@ -48,21 +53,10 @@ if (listasDb) {
 
 
                 });
-            }
 
+            }
         }
     })
-
-
-
-    forms.addEventListener('click', (e) => {
-        if (!e.target.classList.contains("addTask")) return
-
-
-        visor.style.display = 'flex'
-    })
-
-}
 
 
 btn.onclick = (e) => {
@@ -78,7 +72,7 @@ btn.onclick = (e) => {
     })
 
 
-
+        
     localStorage.setItem('usuarios', JSON.stringify(getUser))
 
     const list = document.createElement("div")
@@ -105,21 +99,7 @@ localStorage.setItem('position', JSON.stringify(index))
             visor.style.display = 'flex'
         })
     });
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 
 //sacar si es trabajador o admin
@@ -168,18 +148,24 @@ document.querySelector(".addButton").onclick = (e) => {
     list[pos].appendChild(divs)
     divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
+    visor.style.display = "none"
 }
 
 
-
 document.querySelectorAll('.addTask').forEach((element, index) => {
-    console.log(index)
+    
     element.addEventListener('click', (e) => {
+        console.log(e.target)
         if (!e.target.classList.contains("addTask")) return
         const target = e.target
+
         localStorage.setItem('position', JSON.stringify(index))
+
         console.log(document.querySelectorAll('.addTask'))
         localStorage.setItem('objetivo', target)
         visor.style.display = 'flex'
     })
-})
+})}
+
+
+
