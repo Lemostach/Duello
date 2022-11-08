@@ -13,26 +13,33 @@ const addName = document.querySelector(".newTask")
 const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
 const getUser = JSON.parse(localStorage.getItem('usuarios'))
 const arrayDivs = [];
-const listasDb = localStorage.getItem('usuarios')
 
 
+const todosUsuarios = JSON.parse(localStorage.getItem('usuarios'))
 
-if (listasDb) {
-    getUser.forEach(user => {
-        if (usuarioLogeado.email === user.email) {
+
+const jefeTablero = (usuarioLogeado.rol === "admin") ? usuarioLogeado : usuarioLogeado.jefe
+
+
+if(todosUsuarios){
+
+    todosUsuarios.forEach(user => {
+
+        if(jefeTablero.email === user.email){
+
             if (user.listas) {
-                if (user.listas.length >= 4) {
+                if(user.listas.length >= 4){
                     btn.disabled = true;
                 }
-
+            
                 user.listas.forEach(lista => {
                     const list = document.createElement("div")
                     forms.appendChild(list)
                     list.className = 'list'
                     list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> `
-
-
+        
                 });
+
             }
         }
     })
