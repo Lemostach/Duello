@@ -8,7 +8,7 @@ const visor = document.querySelector('.visor-tarea')
 const asignarBtn = document.querySelector('.asignarButton');
 
 const addName = document.querySelector(".newTask")
-const addButton = document.querySelector(".addButton")
+
 
 const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
 const getUser = JSON.parse(localStorage.getItem('usuarios'))
@@ -76,14 +76,23 @@ btn.onclick = (e) => {
     if (arrayDivs.length >= 4) {
         btn.disabled = true;
     }
+    document.querySelectorAll('.addTask').forEach((element,index )=> {
+        element.addEventListener('click', (e) => {
+            if (!e.target.classList.contains("addTask")) return
+    
+            const target = e.target
+    
+localStorage.setItem('position', JSON.stringify(index))
 
+            console.log(document.querySelectorAll('.addTask'))
+            localStorage.setItem('objetivo', target)
+    
+            visor.style.display = 'flex'
+        })
+    });
 
-    forms.addEventListener('click', (e) => {
-        if (!e.target.classList.contains("addTask")) return
-
-
-        visor.style.display = 'flex'
-    })
+    
+    
 
 }
 
@@ -113,26 +122,20 @@ if (tipo === "trabajador") {
 
 
 
-// cambiar nombre tarea desde el visualizador
-// const addTask = document.querySelector(".addTask")
-
-// function addTaskName(){
-//     const divs = document.createElement("div")
-//     forms.appendChild(divs)
-//     divs.className = 'changeTaskName'
-//     divs.innerHTML = `<p>${addName.value}</p>`
-
-// }
+// cambiar nombre tarea desde el visualizador y añadir esa tarea
 
 
 document.querySelector(".addButton").onclick = (e) => {
     e.preventDefault()
-    const list = document.querySelector(".list")
+
+    const list = document.querySelectorAll(".list")
     const addTask = document.querySelector(".addTask")
     const divs = document.createElement("div")
-    
-    list.appendChild(divs)
-    divs.className = 'changeTaskName'
+    let pos= JSON.parse(localStorage.getItem('position'))
+
+    list[pos].appendChild(divs)
+    divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
+
 
 }
