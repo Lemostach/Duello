@@ -8,7 +8,7 @@ const visor = document.querySelector('.visor-tarea')
 const asignarBtn = document.querySelector('.asignarButton');
 
 const addName = document.querySelector(".newTask")
-const addButton = document.querySelector(".addButton")
+
 
 const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
 const getUser = JSON.parse(localStorage.getItem('usuarios'))
@@ -71,21 +71,27 @@ btn.onclick = (e) => {
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
-    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> `
+    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
     input.value = ''
 
     arrayDivs.push(list);
     if (arrayDivs.length >= 4) {
         btn.disabled = true;
     }
+    document.querySelectorAll('.addTask').forEach((element,index )=> {
+        element.addEventListener('click', (e) => {
+            if (!e.target.classList.contains("addTask")) return
+    
+            const target = e.target
+    
+localStorage.setItem('position', JSON.stringify(index))
 
-
-    forms.addEventListener('click', (e) => {
-        if (!e.target.classList.contains("addTask")) return
-
-
-        visor.style.display = 'flex'
-    })
+            console.log(document.querySelectorAll('.addTask'))
+            localStorage.setItem('objetivo', target)
+    
+            visor.style.display = 'flex'
+        })
+    });
 
 
 

@@ -156,7 +156,7 @@ main input{
 
     font-size: 33px;
     height: 65%;
-    width: 35%;
+    width: 30%;
     margin: 0px;
     margin-top: 25px
 }
@@ -282,11 +282,7 @@ textarea{
     transition: all 300ms ease-in-out;
 }
 
-.addTask:hover{
-    background-color: #52796F;
-}
-
-.changeTaskName{
+.task{
     display: flex;
     margin-top: 20px;
     height: 40px;
@@ -303,7 +299,9 @@ textarea{
 }
 
 
-
+.addTask:hover{
+    background-color: #52796F;
+}
 .user{
     text-align: center;
     color: white;
@@ -321,8 +319,26 @@ textarea{
     padding-left: 40px;
     
 }
+.botonesVisual{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
 
+.addButton, .archButton, .asignarButton, .elimButton{
+    margin: 5px;
+}
 .nombre-tarea{
     margin-top: 10px;
 }
 
+.eliminar-lista{
+    margin-top: 20px;
+    background-color: #354F52;
+    border:2px solid #2F3E46; ;
+    border-radius: 5px;
+    text-shadow: 1px 1px 0px black;
+    color: white;
+    transition: all 300ms ease-in-out;
+}
