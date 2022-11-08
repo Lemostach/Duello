@@ -20,10 +20,23 @@ const listasDb = localStorage.getItem('usuarios')
 if(listasDb){
     getUser.forEach(user => {
         if(usuarioLogeado.email === user.email){
+            if (user.listas) {
+                if(user.listas.length >= 4){
+                    btn.disabled = true;
+                }
             
-            if(user.listas.length >= 4){
-                btn.disabled = true;
+                user.listas.forEach(lista => {
+                const list = document.createElement("div")
+                forms.appendChild(list)
+                list.className = 'list'
+                list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> `
+            
+                
+            });
             }
+        }
+    })
+
         
             user.listas.forEach(lista => {
             const list = document.createElement("div")
@@ -31,12 +44,8 @@ if(listasDb){
             list.className = 'list'
             list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div>`
         
-            
-        });
-        }
-    })
-   
-   
+
+        
 
     forms.addEventListener('click', (e) => {
         if(!e.target.classList.contains("addTask")) return
@@ -45,7 +54,7 @@ if(listasDb){
         visor.style.display = 'flex'
         })
     
-}
+},
 
 
 btn.onclick = (e) => {
@@ -60,14 +69,18 @@ btn.onclick = (e) => {
         }
     })
 
-       
+
         
-       localStorage.setItem('usuarios', JSON.stringify(getUser))
-       
+    localStorage.setItem('usuarios', JSON.stringify(getUser))
+
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
+
+    
     list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div>`
+
+    
     input.value = ''
     
     arrayDivs.push(list);
@@ -88,11 +101,7 @@ localStorage.setItem('position', JSON.stringify(index))
             visor.style.display = 'flex'
         })
     });
-
-    
-    
-
-}
+})
 
 
 //sacar si es trabajador o admin
@@ -136,4 +145,4 @@ document.querySelector(".addButton").onclick = (e) => {
     divs.innerHTML = `<p>${addName.value}</p>`
 
 
-}
+}}
