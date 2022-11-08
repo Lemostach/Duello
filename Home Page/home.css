@@ -155,7 +155,7 @@ main input{
 
     font-size: 33px;
     height: 65%;
-    width: 35%;
+    width: 30%;
     margin: 0px;
     margin-top: 25px
 }
@@ -272,7 +272,7 @@ textarea{
     transition: all 300ms ease-in-out;
 }
 
-.changeTaskName{
+.task{
     display: flex;
     margin-top: 20px;
     height: 40px;
@@ -308,3 +308,13 @@ textarea{
     
 }
 
+.botonesVisual{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.addButton, .archButton, .asignarButton, .elimButton{
+    margin: 5px;
+}
