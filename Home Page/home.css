@@ -243,7 +243,7 @@ textarea{
 
 .list{
     width: 300px;
-    height: 250px;
+    height: auto;
     border: 2px solid #2F3E46;
     margin-left: 40px;
     margin-bottom: 20px;
@@ -271,6 +271,7 @@ textarea{
     margin-top: 20px;
     height: 40px;
     cursor: pointer;
+    margin-bottom: 20px;
     background-color: #354F52;
     border:2px solid #2F3E46; ;
     border-radius: 5px;

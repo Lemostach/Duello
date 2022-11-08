@@ -12,8 +12,6 @@ const addName = document.querySelector(".newTask")
 
 const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
 const getUser = JSON.parse(localStorage.getItem('usuarios'))
-
- 
 const arrayDivs = [];
 const listasDb = localStorage.getItem('usuarios')
 
@@ -31,7 +29,7 @@ if(listasDb){
             const list = document.createElement("div")
             forms.appendChild(list)
             list.className = 'list'
-            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
+            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div>`
         
             
         });
@@ -69,7 +67,7 @@ btn.onclick = (e) => {
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
-    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div> <button class='eliminar-lista'>Eliminar lista</button>`
+    list.innerHTML = `<p class='nombre-tarea'>${input.value}</p> <div class='addTask'>Añadir tarea</div>`
     input.value = ''
     
     arrayDivs.push(list);
