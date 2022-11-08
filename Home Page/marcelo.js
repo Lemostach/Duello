@@ -3,35 +3,37 @@ const input = document.querySelector('.nombreLista')
 const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
-
 const asignarBtn = document.querySelector('.asignarButton');
 
 const addName = document.querySelector(".newTask")
 const addButton = document.querySelector(".addButton")
 
+
 const arrayDivs = [];
 
 
 const listas = [
-    {nombre: '', 
-    tareas: ''}
+    {
+        nombre: '',
+        tareas: ''
+    }
 ]
 
 
 btn.onclick = (e) => {
     e.preventDefault()
-    
-    let nuevaLista = {nombre: input.value, tareas: 'tarea'}
-    if(JSON.parse(localStorage.getItem('listas')) === null){
+
+    let nuevaLista = { nombre: input.value, tareas: 'tarea' }
+    if (JSON.parse(localStorage.getItem('listas')) === null) {
         listas.shift()
         listas.push(nuevaLista)
-    localStorage.setItem('listas', JSON.stringify(listas))
-    } else{
+        localStorage.setItem('listas', JSON.stringify(listas))
+    } else {
         listas.push(nuevaLista)
         localStorage.setItem('listas', JSON.stringify(listas))
     }
-    
-    
+
+
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
@@ -39,17 +41,17 @@ btn.onclick = (e) => {
     input.value = ''
 
     arrayDivs.push(list);
-    if(arrayDivs.length >= 4){
+    if (arrayDivs.length >= 4) {
         btn.disabled = true;
     }
-    
-    
-    forms.addEventListener('click', (e) => {
-        if(!e.target.classList.contains("addTask")) return
 
-        
+
+    forms.addEventListener('click', (e) => {
+        if (!e.target.classList.contains("addTask")) return
+
+
         visor.style.display = 'flex'
-        })
+    })
 
 }
 
@@ -65,28 +67,40 @@ const tipo = userLog[0].rol
 user.append(`Hola, buenas ${tipo}`)
 
 
-if(tipo === "trabajador") {
-    asignarBtn.style.display= "none";
-    btn.style.display= "none";
-    input.style.display= "none";
+if (tipo === "trabajador") {
+    asignarBtn.style.display = "none";
+    btn.style.display = "none";
+    input.style.display = "none";
 } else {
-    asignarBtn.style.display= "inline";
-    btn.style.display= "inline";
-    input.style.display= "inline";
-    }
+    asignarBtn.style.display = "inline";
+    btn.style.display = "inline";
+    input.style.display = "inline";
+}
 
 
 
 
 
-//cambiar nombre tarea desde el visualizador
-// function changeTaskName(){
-//     const list = document.createElement("div")
-//     form.appendChild(list)
-//     list.className = 'list'
-//     list.innerHTML = `<div class="changeTaskName">${addName.value}</div>`
-//     addName.value = ''
+// cambiar nombre tarea desde el visualizador
+// const addTask = document.querySelector(".addTask")
+
+// function addTaskName(){
+//     const divs = document.createElement("div")
+//     forms.appendChild(divs)
+//     divs.className = 'changeTaskName'
+//     divs.innerHTML = `<p>${addName.value}</p>`
+
 // }
 
-// addButton.addEventListener("click", changeTaskName())
 
+document.querySelector(".addButton").onclick = (e) => {
+    e.preventDefault()
+    const list = document.querySelector(".list")
+    const addTask = document.querySelector(".addTask")
+    const divs = document.createElement("div")
+    
+    list.appendChild(divs)
+    divs.className = 'changeTaskName'
+    divs.innerHTML = `<p>${addName.value}</p>`
+
+}
