@@ -37,25 +37,6 @@ if (listasDb) {
         }
     })
 
-        
-            user.listas.forEach(lista => {
-            const list = document.createElement("div")
-            forms.appendChild(list)
-            list.className = 'list'
-            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div>`
-        
-
-        
-
-    forms.addEventListener('click', (e) => {
-        if (!e.target.classList.contains("addTask")) return
-
-
-        visor.style.display = 'flex'
-        })
-    
-},
-
 
 btn.onclick = (e) => {
     e.preventDefault()
@@ -101,7 +82,7 @@ localStorage.setItem('position', JSON.stringify(index))
             visor.style.display = 'flex'
         })
     });
-})
+}
 
 
 //sacar si es trabajador o admin
@@ -135,33 +116,38 @@ document.querySelector(".addButton").onclick = (e) => {
     const list = document.querySelectorAll(".list")
     const addTask = document.querySelector(".addTask")
     const divs = document.createElement("div")
+
     let pos = JSON.parse(localStorage.getItem('position'))
     list[pos].appendChild(divs)
     divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
 }
 
-document.querySelector(".addButton").onclick = (e) => {
-    e.preventDefault()
-    const list = document.querySelectorAll(".list")
-    const addTask = document.querySelector(".addTask")
-    const divs = document.createElement("div")
-    let pos = JSON.parse(localStorage.getItem('position'))
-
-    list[pos].appendChild(divs)
-    divs.className = 'changeTaskName'
-    divs.innerHTML = `<p>${addName.value}</p>`
-
-}
 
 document.querySelectorAll('.addTask').forEach((element, index) => {
-    console.log(index)
+    
     element.addEventListener('click', (e) => {
+        console.log(e.target)
         if (!e.target.classList.contains("addTask")) return
         const target = e.target
+
         localStorage.setItem('position', JSON.stringify(index))
+
         console.log(document.querySelectorAll('.addTask'))
         localStorage.setItem('objetivo', target)
         visor.style.display = 'flex'
     })
-})
+})}
+
+
+//boton archivar tarea
+document.querySelector(".archButton").onclick = (e) => {
+    e.preventDefault()
+    addName = "dada"
+}
+
+document.querySelectorAll(".task").forEach((element, index) => {
+    element.addEventListener("click", (e)=>{
+        console.log("dawd")
+    })
+});
