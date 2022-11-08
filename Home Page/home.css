@@ -29,7 +29,7 @@ body{
 
 header{
     display: flex;
-    background-color: black;
+    background-color: #1d2529;
     justify-content: space-between;
     align-items: center;
     height: 80px;
@@ -59,12 +59,12 @@ header{
         color: white;
         padding: 5px;
         border-radius: 3px;
-        background-color: black;
+        background-color: #1d2529;;
         transition: all 300ms ease-in-out;
     }
     .btn:hover{
-        
-        background-color: rgba(255, 255, 255, 0.519);
+        color: black;
+        background-color: #CAD2C5;
     }
     
 ul{
@@ -301,4 +301,8 @@ textarea{
     align-items: center;
     padding-left: 40px;
     
+}
+
+.nombre-tarea{
+    margin-top: 10px;
 }
