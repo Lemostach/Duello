@@ -4,68 +4,34 @@ const legend = document.querySelector('legend')
 const forms = document.querySelector('.forms')
 const visor = document.querySelector('.visor-tarea')
 
-
 const asignarBtn = document.querySelector('.asignarButton');
 
 const addName = document.querySelector(".newTask")
 const addButton = document.querySelector(".addButton")
 
-const usuarioLogeado = JSON.parse(localStorage.getItem('usuarioLogeado'))
-const getUser = JSON.parse(localStorage.getItem('usuarios'))
-
- 
 const arrayDivs = [];
-const listasDb = localStorage.getItem('usuarios')
 
 
-
-if(listasDb){
-    getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
-            
-            if(user.listas.length >= 4){
-                btn.disabled = true;
-            }
-        
-            user.listas.forEach(lista => {
-            const list = document.createElement("div")
-            forms.appendChild(list)
-            list.className = 'list'
-            list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p> <div class='addTask'>Añadir tarea</div>`
-        
-            
-        });
-        }
-    })
-   
-   
-
-    forms.addEventListener('click', (e) => {
-        if(!e.target.classList.contains("addTask")) return
-
-        
-        visor.style.display = 'flex'
-        })
-    
-}
+const listas = [
+    {nombre: '', 
+    tareas: ''}
+]
 
 
 btn.onclick = (e) => {
     e.preventDefault()
     
     let nuevaLista = {nombre: input.value, tareas: 'tarea'}
+    if(JSON.parse(localStorage.getItem('listas')) === null){
+        listas.shift()
+        listas.push(nuevaLista)
+    localStorage.setItem('listas', JSON.stringify(listas))
+    } else{
+        listas.push(nuevaLista)
+        localStorage.setItem('listas', JSON.stringify(listas))
+    }
     
-    getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
-            user.listas.push(nuevaLista)
-            console.log(user.listas)
-        }
-    })
-
-       
-        
-       localStorage.setItem('usuarios', JSON.stringify(getUser))
-       
+    
     const list = document.createElement("div")
     forms.appendChild(list)
     list.className = 'list'
@@ -73,17 +39,17 @@ btn.onclick = (e) => {
     input.value = ''
     
     arrayDivs.push(list);
-    if(arrayDivs.length >= 4){
+    if (arrayDivs.length >= 4) {
         btn.disabled = true;
     }
-    
-    
-    forms.addEventListener('click', (e) => {
-        if(!e.target.classList.contains("addTask")) return
 
-        
+
+    forms.addEventListener('click', (e) => {
+        if (!e.target.classList.contains("addTask")) return
+
+
         visor.style.display = 'flex'
-        })
+    })
 
 }
 
@@ -99,28 +65,40 @@ const tipo = userLog.rol
 user.append(`Hola, buenas, ${tipo}`)
 
 
-if(tipo === "trabajador") {
-    asignarBtn.style.display= "none";
-    btn.style.display= "none";
-    input.style.display= "none";
+if (tipo === "trabajador") {
+    asignarBtn.style.display = "none";
+    btn.style.display = "none";
+    input.style.display = "none";
 } else {
-    asignarBtn.style.display= "inline";
-    btn.style.display= "inline";
-    input.style.display= "inline";
-    }
+    asignarBtn.style.display = "inline";
+    btn.style.display = "inline";
+    input.style.display = "inline";
+}
 
 
 
 
 
-//cambiar nombre tarea desde el visualizador
-// function changeTaskName(){
-//     const list = document.createElement("div")
-//     form.appendChild(list)
-//     list.className = 'list'
-//     list.innerHTML = `<div class="changeTaskName">${addName.value}</div>`
-//     addName.value = ''
+// cambiar nombre tarea desde el visualizador
+// const addTask = document.querySelector(".addTask")
+
+// function addTaskName(){
+//     const divs = document.createElement("div")
+//     forms.appendChild(divs)
+//     divs.className = 'changeTaskName'
+//     divs.innerHTML = `<p>${addName.value}</p>`
+
 // }
 
-// addButton.addEventListener("click", changeTaskName())
 
+document.querySelector(".addButton").onclick = (e) => {
+    e.preventDefault()
+    const list = document.querySelector(".list")
+    const addTask = document.querySelector(".addTask")
+    const divs = document.createElement("div")
+    
+    list.appendChild(divs)
+    divs.className = 'changeTaskName'
+    divs.innerHTML = `<p>${addName.value}</p>`
+
+}
