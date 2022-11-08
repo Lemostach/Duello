@@ -12,9 +12,9 @@ const usuarios = [
     
 
 
-    {email: "usuario11@duello.com", password: "usuario11", rol: "admin"},
-    {email: "usuario12@duello.com", password: "usuario12", rol: "admin"},
-    {email: "usuario13@duello.com", password: "usuario13", rol: "admin"},
+    {email: "usuario11@duello.com", password: "usuario11", rol: "admin", listas: []},
+    {email: "usuario12@duello.com", password: "usuario12", rol: "admin", listas: []},
+    {email: "usuario13@duello.com", password: "usuario13", rol: "admin", listas: []},
 ]
 
 
@@ -24,7 +24,7 @@ isLogged = (loggedUser) ? JSON.parse(loggedUser) : false;
 
 console.log(isLogged)
 
-localStorage.setItem("usuarios", JSON.stringify(usuarios));
+// localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 
 
@@ -53,16 +53,18 @@ document.getElementById("deslogear").onclick = function() {
         const loginBtn = document.querySelector('#login')
 
         
-        loginBtn.onclick = function() {
-
-            const currentUser = allUsers.filter(user => user.email === email.value && user.password === password.value)
+        loginBtn.onclick = function(e) {
+            e.preventDefault()
+            const currentUser = allUsers.find(user => user.email === email.value && user.password === password.value)
 
             
 
-            if (currentUser.length) {
+            if (currentUser) {
             
 
                  const usuarioLogeado = localStorage.setItem("usuarioLogeado", JSON.stringify(currentUser));
+
+                 location.assign("../Home%20Page/home.html");
             
             }else {
                 console.log("NO HAY USER")

@@ -16,9 +16,9 @@ const usuarios = [
     {email: "usuario8@duello.com", password: "usuario8", rol: "trabajador"},
     {email: "usuario9@duello.com", password: "usuario9", rol: "trabajador"},
     {email: "usuario10@duello.com", password: "usuario10", rol: "trabajador"},
-    {email: "usuario11@duello.com", password: "usuario11", rol: "admin"},
-    {email: "usuario12@duello.com", password: "usuario12", rol: "admin"},
-    {email: "usuario13@duello.com", password: "usuario13", rol: "admin"},
+    {email: "usuario11@duello.com", password: "usuario11", rol: "admin", listas: ''},
+    {email: "usuario12@duello.com", password: "usuario12", rol: "admin", listas: ''},
+    {email: "usuario13@duello.com", password: "usuario13", rol: "admin", listas: ''},
 ]
 
 const listas = [

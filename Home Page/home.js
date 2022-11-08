@@ -15,7 +15,7 @@ exitBtn.onclick = function() {
        
         
         localStorage.removeItem("usuarioLogeado");
-        location.assign("../Landing Page/inicio.html");
+         location.assign("../Landing Page/inicio.html");
         console.log("Hola")
 
     }
