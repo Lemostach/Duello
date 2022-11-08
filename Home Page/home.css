@@ -317,5 +317,9 @@ textarea{
     justify-content: center;
     align-items: center;
     padding-left: 40px;
-    
 }
+
+.nombre-tarea{
+    margin-top: 10px;
+}
+
