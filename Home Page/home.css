@@ -232,7 +232,8 @@ textarea{
 
 .list{
     width: 300px;
-    height: 250px;
+    height: auto;
+    padding-bottom: 20px;
     border: 1px solid black;
     margin-left: 40px;
     margin-bottom: 20px;
@@ -271,6 +272,23 @@ textarea{
     transition: all 300ms ease-in-out;
 }
 
+.changeTaskName{
+    display: flex;
+    margin-top: 20px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #354F52;
+    border:2px solid #2F3E46; ;
+    border-radius: 5px;
+    text-shadow: 1px 1px 0px black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+}
+
+
 .addTask:hover{
     background-color: #52796F;
 }
@@ -289,3 +307,4 @@ textarea{
     padding-left: 40px;
     
 }
+
