@@ -20,7 +20,7 @@ const todosUsuarios = JSON.parse(localStorage.getItem('usuarios'))
 
 const jefeTablero = (usuarioLogeado.rol === "admin") ? usuarioLogeado : usuarioLogeado.jefe
 
-
+console.log(usuarioLogeado.jefe)
 if(todosUsuarios){
 
     todosUsuarios.forEach(user => {
