@@ -35,8 +35,3 @@ exitBtn.onclick = function() {
 
 
 
-
-    
-
-
-

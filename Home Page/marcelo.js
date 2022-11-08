@@ -121,6 +121,7 @@ document.querySelector(".addButton").onclick = (e) => {
     list[pos].appendChild(divs)
     divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
+    visor.style.display = "none"
 }
 
 
@@ -140,14 +141,4 @@ document.querySelectorAll('.addTask').forEach((element, index) => {
 })}
 
 
-//boton archivar tarea
-document.querySelector(".archButton").onclick = (e) => {
-    e.preventDefault()
-    addName = "dada"
-}
 
-document.querySelectorAll(".task").forEach((element, index) => {
-    element.addEventListener("click", (e)=>{
-        console.log("dawd")
-    })
-});
