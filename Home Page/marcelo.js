@@ -17,22 +17,22 @@ const listasDb = localStorage.getItem('usuarios')
 
 
 
-if(listasDb){
+if (listasDb) {
     getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
+        if (usuarioLogeado.email === user.email) {
             if (user.listas) {
-                if(user.listas.length >= 4){
+                if (user.listas.length >= 4) {
                     btn.disabled = true;
                 }
-            
+
                 user.listas.forEach(lista => {
-                const list = document.createElement("div")
-                forms.appendChild(list)
-                list.className = 'list'
-                list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> `
-            
-                
-            });
+                    const list = document.createElement("div")
+                    forms.appendChild(list)
+                    list.className = 'list'
+                    list.innerHTML = `<p class='nombre-tarea'>${lista.nombre}</p><div class='addTask'>Añadir tarea</div> `
+
+
+                });
             }
         }
     })
@@ -48,9 +48,9 @@ if(listasDb){
         
 
     forms.addEventListener('click', (e) => {
-        if(!e.target.classList.contains("addTask")) return
+        if (!e.target.classList.contains("addTask")) return
 
-        
+
         visor.style.display = 'flex'
         })
     
@@ -59,11 +59,11 @@ if(listasDb){
 
 btn.onclick = (e) => {
     e.preventDefault()
-    
-    let nuevaLista = {nombre: input.value, tareas: 'tarea'}
-    
+
+    let nuevaLista = { nombre: input.value, tareas: 'tarea' }
+
     getUser.forEach(user => {
-        if(usuarioLogeado.email === user.email){
+        if (usuarioLogeado.email === user.email) {
             user.listas.push(nuevaLista)
             console.log(user.listas)
         }
@@ -82,7 +82,7 @@ btn.onclick = (e) => {
 
     
     input.value = ''
-    
+
     arrayDivs.push(list);
     if (arrayDivs.length >= 4) {
         btn.disabled = true;
@@ -129,20 +129,39 @@ if (tipo === "trabajador") {
 
 
 
-// cambiar nombre tarea desde el visualizador y añadir esa tarea
-
-
+// cambiar nombre tarea desde el visualizador
 document.querySelector(".addButton").onclick = (e) => {
     e.preventDefault()
-
     const list = document.querySelectorAll(".list")
     const addTask = document.querySelector(".addTask")
     const divs = document.createElement("div")
-    let pos= JSON.parse(localStorage.getItem('position'))
-
+    let pos = JSON.parse(localStorage.getItem('position'))
     list[pos].appendChild(divs)
     divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
+}
 
+document.querySelector(".addButton").onclick = (e) => {
+    e.preventDefault()
+    const list = document.querySelectorAll(".list")
+    const addTask = document.querySelector(".addTask")
+    const divs = document.createElement("div")
+    let pos = JSON.parse(localStorage.getItem('position'))
 
-}}
+    list[pos].appendChild(divs)
+    divs.className = 'changeTaskName'
+    divs.innerHTML = `<p>${addName.value}</p>`
+
+}
+
+document.querySelectorAll('.addTask').forEach((element, index) => {
+    console.log(index)
+    element.addEventListener('click', (e) => {
+        if (!e.target.classList.contains("addTask")) return
+        const target = e.target
+        localStorage.setItem('position', JSON.stringify(index))
+        console.log(document.querySelectorAll('.addTask'))
+        localStorage.setItem('objetivo', target)
+        visor.style.display = 'flex'
+    })
+})
