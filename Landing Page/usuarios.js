@@ -24,8 +24,7 @@ const isLogged = (loggedUser) ? JSON.parse(loggedUser) : false;
 
 console.log(isLogged)
 
-
- localStorage.setItem("usuarios", JSON.stringify(usuarios));
+//  localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 if (isLogged) {
    location.assign("../Home%20Page/home.html");

@@ -67,7 +67,7 @@ btn.onclick = (e) => {
     getUser.forEach(user => {
         if (usuarioLogeado.email === user.email) {
             user.listas.push(nuevaLista)
-            console.log(user.listas)
+            
         }
     })
 
@@ -93,7 +93,7 @@ btn.onclick = (e) => {
     
 localStorage.setItem('position', JSON.stringify(index))
 
-            console.log(document.querySelectorAll('.addTask'))
+           
             localStorage.setItem('objetivo', target)
     
             visor.style.display = 'flex'
@@ -130,13 +130,14 @@ if (tipo === "trabajador") {
 // cambiar nombre tarea desde el visualizador
 document.querySelector(".addButton").onclick = (e) => {
     e.preventDefault()
+    
     let pos = JSON.parse(localStorage.getItem('position'))
     const currentUser = JSON.parse(localStorage.getItem('usuarios'))
     const newTask = {nombre: addName.value, descripcion: descripcion.value, asignada: null, archivada: false}
     currentUser.forEach(user => {
         if(usuarioLogeado.email === user.email){
             user.listas[pos].tareas.push(newTask)
-            console.log(user.listas)
+            
         }
     })
     
@@ -149,23 +150,55 @@ document.querySelector(".addButton").onclick = (e) => {
     divs.className = 'task'
     divs.innerHTML = `<p>${addName.value}</p>`
     visor.style.display = "none"
+    addName.value = ''
+    descripcion.value = ''
 }
 
 
 document.querySelectorAll('.addTask').forEach((element, index) => {
     
     element.addEventListener('click', (e) => {
-        console.log(e.target)
+       
         if (!e.target.classList.contains("addTask")) return
         const target = e.target
 
         localStorage.setItem('position', JSON.stringify(index))
 
-        console.log(document.querySelectorAll('.addTask'))
         localStorage.setItem('objetivo', target)
         visor.style.display = 'flex'
     })
 })}
+
+const task = document.querySelectorAll('.task')
+
+task.forEach((element, index) => {
+    element.addEventListener('click', (e) => {
+        const users = JSON.parse(localStorage.getItem('usuarios'))
+        // if (!e.target.classList.contains("addTask")) return
+        const target = e.target;
+        localStorage.setItem('position', JSON.stringify(index))
+        // localStorage.setItem('objetivo', target)
+        
+        visor.style.display = 'flex'
+        
+        
+    
+    users.forEach(user => {
+        let pos = JSON.parse(localStorage.getItem('position'))
+        if(usuarioLogeado.email === user.email)
+        // user.listas.forEach(lista => {
+            addName.value = user.listas[pos].tareas[pos].nombre
+             descripcion.value = user.listas[pos].tareas[pos].descripcion
+                
+        // })
+        })
+        })
+    })
+
+
+
+    
+
 
 
 
